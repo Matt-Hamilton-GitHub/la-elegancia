@@ -1,5 +1,6 @@
 import Announcement from "./components/Announcement";
 import Navbar from "./components/Navbar";
+import Slider from "./components/Slider";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Announcement />
       <Navbar />
+      <Slider/>
       
     </div>
   );
