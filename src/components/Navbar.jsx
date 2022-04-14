@@ -100,6 +100,11 @@ padding:5px;
 
 .logo  >h1{
     font-size: bold;
+    /* font-family: 'Bitter', serif; */
+
+
+/* font-family: 'Nunito Sans', sans-serif; */
+font-family: 'Quicksand', sans-serif;
 
 }
 
