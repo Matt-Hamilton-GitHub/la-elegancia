@@ -1,58 +1,56 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import styled from 'styled-components'
 import summer_dress from '../imgs/summer-dress-2.jpg'
+import winter_dress from '../imgs/winter-dress.jpg'
+import slides from '../data'
 
 function Slider() {
+
+  const[slideIndex, setSlideIndex] = useState(0);
+
+  const handleClick = (direction)=>{
+ 
+    if(direction === 'left'){
+      setSlideIndex(slideIndex > 0 ?slideIndex - 1 : 2)
+    }else{
+      setSlideIndex(slideIndex < 2 ?slideIndex + 1 : 0)
+    }
+
+  }
+
   return (
     <Wrapper>
-        <Arrow direction='left'>
+        <Arrow direction='left' onClick={()=> handleClick('left')}>
             <ArrowLeftIcon />
         </Arrow>
-        <div className='wrapper-slides'>
-            <Slide bg='fcf1ed'>
+        <WrapperSlides slideIndex={slideIndex}>
+          {slides.map((slide) => {
+              const {id, img, title, desc, bg} = slide;
 
-                <div className='img-container'>
-                    <img src={summer_dress} className='image-slider'/> 
+             return(
+            
+            <Slide bg={bg} key={id}>
+
+               <div className='img-container' >
+                    <img src={img} className='image-slider'/> 
                 </div>
                 <div className='info-container'>
-                  <h1>SUMMER SALE</h1>
-                  <p>DON'T COMPROMISE ON STYLE? GET FALT 30% OFF FOR NEW ARRIVALS.</p>
+                  <h1>{title}</h1>
+                  <p>{desc}</p>
                   <button className=''>SHOP NOW</button>
                 </div>
+                
             </Slide>
+              )
 
-            <Slide bg='fcf1ed'>
-
-                <div className='img-container'>
-                    <img src={summer_dress} className='image-slider'/> 
-                </div>
-                <div className='info-container'>
-                  <h1>WINTER SALE</h1>
-                  <p>DON'T COMPROMISE ON STYLE? GET FALT 30% OFF FOR NEW ARRIVALS.</p>
-                  <button className=''>SHOP NOW</button>
-                </div>
-            </Slide>
-
-            <Slide bg='fcf1ed'>
-
-                <div className='img-container'>
-                    <img src={summer_dress} className='image-slider'/> 
-                </div>
-                <div className='info-container'>
-                  <h1>FALL SALE</h1>
-                  <p>DON'T COMPROMISE ON STYLE? GET FALT 30% OFF FOR NEW ARRIVALS.</p>
-                  <button className=''>SHOP NOW</button>
-                </div>
-            </Slide>
-
-
-
-
-        </div>
-        <Arrow direction='right'>
+              })
+          }
+           
+        </WrapperSlides>
+        <Arrow direction='right'  onClick={()=> handleClick('right')}>
           <ArrowRightIcon />
           </Arrow>
     </Wrapper>
@@ -62,17 +60,12 @@ function Slider() {
 export default Slider
 
 const Wrapper = styled.div`
-    
     width:100%;
     height:100vh;
     display:flex;
     position:relative;
     overflow:hidden;
 
-.wrapper-slides{
-display:flex;
-flex-direction:row;
-}
 
 .img-container{
 flex:1;
@@ -125,14 +118,24 @@ const Arrow = styled.div`
       right: ${props => props.direction === 'right' && '10px'};
       cursor:pointer;
       opacity:0.5;
+      z-index:2;
 
 `
 
+const WrapperSlides = styled.div`
+display:flex;
+flex-direction:row;
+transform: translateX(${props => props.slideIndex * -100}vw);
+transition: all 1.5s ease-in-out;
+`
+
+
 const Slide = styled.div`
-  display:flex;
+display:flex;
 align-items: center;
 width:100vw;
 height:100vh;
+padding-top:50px;
 background-color: #${props => props.bg }
 `
 
