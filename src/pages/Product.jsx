@@ -140,9 +140,6 @@ font-weight:500;
 
 `
 
-
-
-
 const Container = styled.div``
 
 const Wrapper = styled.div`
