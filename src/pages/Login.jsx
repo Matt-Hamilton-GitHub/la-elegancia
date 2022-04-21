@@ -64,7 +64,6 @@ padding:10px;
 
 const Button = styled.button`
 margin:20px;
-
 flex:1;
 width:25%;
 min-width:100px;
@@ -79,6 +78,6 @@ const Link = styled.a`
    margin:5px 0px;
    font-size:12px;
    cursor:pointer;
-  font-weight:600;
-  text-decoration:underline;
+   font-weight:600;
+   text-decoration: underline;
 `
