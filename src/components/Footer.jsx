@@ -7,7 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import MapIcon from '@mui/icons-material/Map';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-
+import {mobile} from '../responsive'
 function Footer() {
   return (
     <Container>
@@ -65,6 +65,7 @@ export default Footer
 
 const Container = styled.div`
 display:flex;
+${mobile({flexDirection:'column'})}
 `
 
 const Left = styled.div`
@@ -77,11 +78,13 @@ padding:20px;
 const Right = styled.div`
 flex:1;
 padding:20px;
+${mobile({background:'#fff8f8'})}
 `
 
 const Center = styled.div`
 flex:1;
 padding:20px;
+${mobile({display: 'none'})}
 `
 
 const Logo = styled.h1`

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import SendIcon from '@mui/icons-material/Send';
+import {mobile} from '../responsive'
 
 function Newsletter() {
   return (
@@ -35,13 +36,15 @@ flex-direction:column;
 const Title = styled.h1`
     font-size:70px;
     margin:20px;
+    ${mobile({fontSize:'50px'})};
 
 `
 const Description = styled.div`
    font-size:24px;
    font-weight: 300;
    margin-bottom:20px;
-
+   ${mobile({fontSize:'25px'})}
+  
 `
 const InputContainer = styled.div`
     
@@ -53,6 +56,7 @@ const InputContainer = styled.div`
     justify-content:space-between;
     border: 1px solid lightgrey;
     margin-left:35% ;
+    ${mobile({width:'40%'})}
 
 `
 const Input = styled.input`

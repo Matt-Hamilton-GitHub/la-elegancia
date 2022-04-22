@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import Products from '../components/Products'
+import {mobile} from '../responsive'
 
 function ProductList() {
   return (
@@ -55,7 +56,7 @@ export default ProductList
 const Select = styled.select`
 margin-left:20px;
 padding:10px;
-border: 2px #FFC300 solid;
+border: NONE;
 `
 const Option = styled.option`
 padding:20px;
@@ -75,10 +76,12 @@ border-bottom:1px solid teal;
 `
 const Filter = styled.div`
 margin:20px;
+${mobile({margin:'0px 20px', display: 'flex', flexDirection:'column'})}
 `
 
 const FilterText = styled.span`
     font-size:20px;
     font-weight:600;
     margin-right:20px;
+    ${mobile({marginRight:'0px'})}
 `

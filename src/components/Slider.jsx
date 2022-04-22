@@ -3,9 +3,8 @@ import React, { useState } from 'react'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import styled from 'styled-components'
-import summer_dress from '../imgs/summer-dress-2.jpg'
-import winter_dress from '../imgs/winter-dress.jpg'
 import slides from '../data'
+import {mobile} from '../responsive'
 
 function Slider() {
 
@@ -65,6 +64,8 @@ const Wrapper = styled.div`
     display:flex;
     position:relative;
     overflow:hidden;
+
+  ${mobile({display: 'none'})}
 
 
 .img-container{

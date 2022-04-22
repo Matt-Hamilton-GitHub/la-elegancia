@@ -70,26 +70,22 @@ export const categories = [
 export const popularProducts = [
     {
         id:1,
-        img: blue_jeans,
+        img: 'https://i.pinimg.com/originals/d1/f1/f8/d1f1f8bae50e63d4923dcbf84f0a6b25.png',
     },
 
-    {
-        id:2,
-        img: gloves,
-    },
 
     {
         id:3,
-        img:jeans_jackets,
+        img:'https://m.media-amazon.com/images/I/51Jj3oKbSLL.jpg',
     },
     {
         id:4,
-        img: lather_jacket,
+        img: 'https://freepikpsd.com/file/2020/01/Men-Jacket-PNG-Free-Download.png',
     },
 
     {
         id:5,
-        img: shoes,
+        img: 'https://st2.depositphotos.com/2920039/10826/i/950/depositphotos_108265984-stock-photo-blue-sport-shoes-on-a.jpg',
     },
 
     {

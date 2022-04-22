@@ -1,6 +1,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import {mobile} from '../responsive'
 
 const  CategoryItem = ({category}) => {
   return (
@@ -30,6 +31,7 @@ const Image = styled.img`
 width:100%;
 height:100%;
 object-fit:cover;
+${mobile({height:'25vh'})}
 
 `
 
