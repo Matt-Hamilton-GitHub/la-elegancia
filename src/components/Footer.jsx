@@ -8,6 +8,7 @@ import MapIcon from '@mui/icons-material/Map';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import {mobile} from '../responsive'
+
 function Footer() {
   return (
     <Container>
