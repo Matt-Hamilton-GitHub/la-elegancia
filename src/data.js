@@ -52,17 +52,21 @@ export const categories = [
     {
         id:1,
         img: shirt_style,
-        title: 'SHIRT STYLE'
+        title: 'SHIRT STYLE',
+        cat: "shirt"
     },
     {
         id:2,
         img: lounge_wear,
-        title: 'LOUNGEWEAR LOVE'
+        title: 'LOUNGEWEAR LOVE',
+        cat: 'lounge',
+
     },
     {
         id:3,
         img: light_jackets,
-        title: 'LIGHT JACKETS'
+        title: 'LIGHT JACKETS',
+        cat: 'jacket'
     }
 ]
 
@@ -78,10 +82,7 @@ export const popularProducts = [
         id:3,
         img:'https://m.media-amazon.com/images/I/51Jj3oKbSLL.jpg',
     },
-    {
-        id:4,
-        img: 'https://freepikpsd.com/file/2020/01/Men-Jacket-PNG-Free-Download.png',
-    },
+
 
     {
         id:5,
