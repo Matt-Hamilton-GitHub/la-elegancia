@@ -28,7 +28,7 @@ function ProductList() {
     <Container>
         <Announcement />
         <Navbar />
-        <Title>Dresses</Title>
+        <Title>{tagName}</Title>
         <FilterContainer>
             <Filter> 
                 <FilterText> Filter Products</FilterText>

@@ -1,4 +1,7 @@
 
+import {useState, useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
+
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import React from 'react'
@@ -9,31 +12,49 @@ import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import jumpsuits_denim from '../imgs/jumpsuits-denim.jpg'
 import {mobile} from '../responsive'
+import {publicRequest} from '../requestMethods'
 
 
 function Product() {
+
+    const id = useLocation().pathname.split("/")[2];
+
+    const [product, setProduct] = useState({});
+
+    useEffect(() =>{
+        const getProduct = async () => {
+            try{
+                const res = await publicRequest.get('/products/find/' + id);
+                setProduct(res.data);
+            }catch(err){console.log(err);}
+        }
+
+        getProduct()
+    },[id])
+
+    const {color, description,img,price,size,title } = product;
+
   return (
     <Container>
         <Announcement />
         <Navbar />
         <Wrapper >
              <ImgContainer>
-                <Image src={jumpsuits_denim} />
+                <Image src={img} />
              </ImgContainer>
              <InfoContainer>
-                 <Title>Denim Jumpsuit</Title>
-                 <Desc>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                       ullamco laboris nisi ut aliquip ex ea commodo consequat. </Desc>
-                 <Price>$75</Price>
+                 <Title>{title}</Title>
+                 <Desc>{description}</Desc>
+                 <Price>{`$ ${price}`}</Price>
                  <FilterContainer>
 
                     <Filter>
                         <FilterTitle>Color</FilterTitle>
-                        <FilterColor color='black'/>
-                        <FilterColor color='darkblue'/>
-                        <FilterColor color='grey'/>
+                        {color.map((c)=>(
+                             <FilterColor color={c} key={c}/>
+                        )
+                        )}
+
                     </Filter> 
 
                    

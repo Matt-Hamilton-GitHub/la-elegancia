@@ -1,8 +1,15 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import styled from 'styled-components'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 function Product({item}) {
   return (
     <Container>
@@ -13,7 +20,9 @@ function Product({item}) {
                 <ShoppingCartIcon />
             </Icon>
             <Icon>
+              <Link to={`/product/${item._id}`}>
                 <SearchIcon />
+              </Link>
             </Icon>
             <Icon>
                 <FavoriteBorderIcon />

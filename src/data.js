@@ -48,6 +48,8 @@ const sliderItems = [
 
 ]
 
+
+
 export const categories = [
     {
         id:1,
